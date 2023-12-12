@@ -14,8 +14,8 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   O3DController o3dController = O3DController();
-  PageController mainPageController = PageController();
-  PageController textsPageController = PageController();
+  PageController page1 = PageController();
+  PageController page2 = PageController();
   int page = 0;
   List<String> walkingBenefits = [
     "Enhances cardiovascular health, reducing risks.",
@@ -46,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
               backgroundColor: const Color(0xffFFF4F3),
             ),
             PageView(
-              controller: mainPageController,
+              controller: page1,
               children: [
                 WalkingBenefitsWidget(
                     height: height, walkingBenefits: walkingBenefits),
@@ -59,20 +59,21 @@ class _HomeScreenState extends State<HomeScreen> {
                 )
               ],
             ),
-            DailyGoalsWidget(textsPageController: textsPageController),
+            DailyGoalsWidget(textsPageController: page2),
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
             selectedItemColor: Colors.purple,
             currentIndex: page,
             onTap: (page) {
-              mainPageController.animateToPage(page,
+              page1.animateToPage(page,
                   duration: const Duration(milliseconds: 500),
                   curve: Curves.ease);
-              textsPageController.animateToPage(page,
+              page2.animateToPage(page,
                   duration: const Duration(milliseconds: 500),
                   curve: Curves.ease);
 
+              //* Change the cameraTarget and cameraOrbit to change the direction & rotation of character
               if (page == 0) {
                 o3dController.cameraTarget(-.25, 1.5, 1.5);
                 o3dController.cameraOrbit(0, 90, 1);
