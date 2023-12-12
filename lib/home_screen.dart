@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:o3d/o3d.dart';
 import 'widgets/daily_goals_widget.dart';
 import 'widgets/morning_walk_list_widget.dart';
+import 'widgets/profile_widget.dart';
 import 'widgets/walking_benefit_list_widget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -51,14 +52,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 WalkingBenefitsWidget(
                     height: height, walkingBenefits: walkingBenefits),
                 MorningWalkListWidget(height: height),
-                ClipPath(
-                  clipper: CircleClipper(),
-                  child: Container(
-                    color: Colors.white,
-                  ),
-                )
+                const ProfileWidget(),
               ],
             ),
+            //* This widget displays the information at the top left corner
             DailyGoalsWidget(textsPageController: page2),
           ],
         ),
