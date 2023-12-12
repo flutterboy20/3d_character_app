@@ -16,7 +16,7 @@ class WalkingBenefitsWidget extends StatelessWidget {
       padding: EdgeInsets.fromLTRB(12, height * 0.8, 12, 100),
       itemCount: walkingBenefits.length,
       itemBuilder: (context, index) => Card(
-        color: Colors.red.shade400,
+        color: Colors.purple,
         child: Padding(
           padding: const EdgeInsets.all(32.0),
           child: Row(

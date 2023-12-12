@@ -14,7 +14,7 @@ class MorningWalkListWidget extends StatelessWidget {
       padding: EdgeInsets.fromLTRB(12, height * 0.8, 12, 100),
       itemCount: 5,
       itemBuilder: (context, index) => Card(
-        color: Colors.red.shade400,
+        color: Colors.purple,
         child: Padding(
           padding: const EdgeInsets.all(32.0),
           child: Row(
